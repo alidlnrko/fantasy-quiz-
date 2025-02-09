@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Quiz and Genre</title>
+    <style>
+        /* General Styles */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f0f0; }
+        header { background-color: #333; padding: 20px; color: white; text-align: center; }
+        header nav a { color: white; margin: 0 20px; text-decoration: none; font-weight: bold; }
+        header nav a:hover { color: #ffcc00; }
+
+        /* Section Styles */
+        section { padding: 50px 20px; text-align: center; }
+        .card { display: inline-block; width: 250px; margin: 20px; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out; }
+        .card:hover { transform: scale(1.05); }
+        .card img { width: 100%; height: auto; border-radius: 10px; }
+        .card a { display: block; margin-top: 10px; text-decoration: none; color: #333; font-weight: bold; }
+        
+        /* Animations */
+        .fade-in { opacity: 0; transition: opacity 1s ease-in-out; }
+        .fade-in.visible { opacity: 1; }
+
+        /* Fantasy Genre Info */
+        .genre-info { background-color: #2a4d75; color: white; padding: 50px 20px; }
+        .genre-info p { font-size: 18px; line-height: 1.6; }
+
+        /* About Section */
+        .about-section { background-color: #ffcc00; padding: 30px 20px; text-align: center; color: #333; }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Navigation -->
+    <header>
+        <nav>
+            <a href="#quiz">Quiz</a>
+            <a href="#about">About</a>
+            <a href="#genre">Fantasy Genre</a>
+        </nav>
+    </header>
+
+    <!-- Section with Cards -->
+    <section id="quiz">
+        <h2>Explore Fantasy</h2>
+        <div class="card fade-in" id="card1">
+            <img src="https://static.wikia.nocookie.net/looking-glass/images/1/15/Aliceposter.png/revision/latest?cb=20220919091609" alt="Fantasy Image 1">
+            <h3>Alice in wonderland</h3>
+            <p>Test your knowledge about fantasy worlds!</p>
+            <a href="c:\Users\user\Desktop\test\index2.html">Start Quiz</a>
+        </div>
+        <div class="card fade-in" id="card2">
+            <img src="https://upload.wikimedia.org/wikipedia/ru/7/7a/Bridge-to-Terabithia-poster.jpg" alt="Fantasy Image 2">
+            <h3>the bridge to terabithia</h3>
+            <p>Do you know your favorite fantasy characters?</p>
+            <a href="c:\Users\user\Desktop\test\index3.html">Start Quiz</a>
+        </div>
+        <div class="card fade-in" id="card3">
+            <img src="https://www.asiabooks.com/media/catalog/product/cache/a5ac216be58c0cbce1cb04612ece96dc/9/7/9780008537777.jpg" alt="Fantasy Image 3">
+            <h3>The Lord of the Rings</h3>
+            <p>Discover how much you know about the fantasy genre!</p>
+            <a href="c:\Users\user\Desktop\test\index.html">Start Quiz</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About Fantasy Genre</h2>
+        <p>Fantasy is a genre of speculative fiction that often takes place in imaginary worlds or universes, involving magical elements and mythical creatures. The genre has been a significant part of literature, films, and video games for centuries.</p>
+    </section>
+
+    <!-- Fantasy Genre Info Section -->
+    <section id="genre" class="genre-info">
+        <h2>What is Fantasy Genre?</h2>
+        <p>Fantasy is a literary genre that incorporates magical elements, often set in fantastical worlds or universes that are distinctly different from the real world. These stories frequently feature creatures such as dragons, elves, and wizards, and themes such as good versus evil, magic, and epic quests.</p>
+
+        <h3>What Is the Difference Between Fantasy, Science Fiction, and Horror?</h3>
+        <p>There is some overlap between these three literary genres, but each has distinct characteristics that set them apart.</p>
+        <h4>Fantasy:</h4>
+        <p>The genre typically has no basis in scientific fact or speculation. It includes implausible supernatural and magical elements, such as the wizards of J.K. Rowling’s Harry Potter series, or the dragons, giants, and White Walkers of George R. R. Martin’s A Game of Thrones.</p>
+
+        <h4>Science Fiction:</h4>
+        <p>Science fiction features technology and natural or technological scenarios that are currently possible or may realistically become possible in the future. For example, in his short story, “Burning Chrome” (1982) and novel Neuromancer (1984), sci-fi author William Gibson coined the phrase “cyberspace” and wrote about a complex network of computer databases sharing information, predicting the internet.</p>
+
+        <h4>Horror:</h4>
+        <p>Unlike the other two genres, which may contain horrific elements, horror is primarily focused on mood. Its fundamental aim is to create an unsettling atmosphere and provide the reader with a sense of fear and dread. The setting and circumstances of horror may be entirely realistic, as in Stephen King’s Cujo (1981), where a family’s bat-bitten St. Bernard becomes rabid and terrorizes them. However, horror can include elements of both fantasy and science fiction—take H. P. Lovecraft’s fantastical extraterrestrial deities the Great Old Ones, or the bloodthirsty great white shark in Peter Benchley’s Jaws (1974), for example—but the ultimate goal is to unnerve readers.</p>
+    </section>
+
+    <script>
+        // Animation for Cards when Scrolled into View
+        const cards = document.querySelectorAll('.fade-in');
+        window.addEventListener('scroll', () => {
+            cards.forEach(card => {
+                if (card.getBoundingClientRect().top < window.innerHeight) {
+                    card.classList.add('visible');
+                }
+            });
+        });
+
+        // Animation for Genre Text when Scrolled into View
+        const genreInfo = document.querySelector('.genre-info');
+        window.addEventListener('scroll', () => {
+            if (genreInfo.getBoundingClientRect().top < window.innerHeight) {
+                genreInfo.classList.add('visible');
+            }
+        });
+    </script>
+
+</body>
+</html>
